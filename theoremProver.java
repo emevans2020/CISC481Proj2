@@ -2,17 +2,6 @@
 import java.util.*;
 import java.util.ArrayList;
 
-/* class ArrayList{
-	public ArrayList <String> literal;
-
-	public ArrayList (){
-		this.literal = new ArrayList <String>();
-	}
-
-	public boolean isEqual (ArrayList p){
-		return this.literal.isEqual(p.literal);
-	}
- */
 class TheoremProver {
 	public void bind (HashMap<String,String> bindings, String s1, String s2) {
 		while (bindings.containsKey(s1)){
@@ -56,13 +45,7 @@ class TheoremProver {
 
 /* Horn Clause is a list of ArrayLists where first ArrayList is assumed non-negated
 and rest of the ArrayLists will be assumed negated */
-/* class hornClause{
-	
-	public hornClause(){
-		ArrayList <ArrayList> axiom = new ArrayList <ArrayList>();
-	}
-}
- */
+
 
 class Main {
 	public static void main (String args[]){
