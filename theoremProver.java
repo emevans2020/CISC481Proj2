@@ -40,7 +40,13 @@ class TheoremProver {
 			return null;
 		}
 	}
- }
+
+	public void bindVar (HashMap <String,String> bindings, String s){
+		while (bindings.containsKey(s)){
+			s = bindings.get(s);
+		}
+	}
+}
 	
 
 /* Horn Clause is a list of ArrayLists where first ArrayList is assumed non-negated
