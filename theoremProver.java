@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class TheoremProver {
 	static final int MAXRESOLUTIONS = 300;
-	
+
 	public void bind (HashMap<String,String> bindings, String s1, String s2) {
 		while (bindings.containsKey(s1)){
 			s1 = bindings.get(s1);
@@ -17,7 +17,7 @@ public class TheoremProver {
 		}
 	}
 
-	public HashMap Unify (ArrayList<String> p1, ArrayList<String> p2, HashMap<String,String> bindings){
+	public HashMap<String,String> Unify (ArrayList<String> p1, ArrayList<String> p2, HashMap<String,String> bindings){		
 		if (p1.equals(p2)){
 			return bindings;
 		}
@@ -47,7 +47,7 @@ public class TheoremProver {
 		while (bindings.containsKey(s)){
 			s = bindings.get(s);
 		}
-		return var;
+		return s;
 	}
 }
 	
@@ -55,7 +55,7 @@ public class TheoremProver {
 /* Horn Clause is a list of ArrayLists where first ArrayList is assumed non-negated
 and rest of the ArrayLists will be assumed negated */
 class Main {
-	public static void main (String args[]){
+	public static void main(String[] args){
 		/* Predicates */
 		ArrayList <String> gp = new ArrayList <String>();
 		Collections.addAll(gp, "grandparent","?x","?y");
@@ -72,21 +72,21 @@ class Main {
 		Collections.addAll(p3, "parent","Mary","Sue");
 
 		/* Clauses arraylist of predicates */
-		ArrayList <ArrayList> hc1 = new ArrayList<ArrayList>();
+		ArrayList <ArrayList<String>> hc1 = new ArrayList<ArrayList<String>>();
 		Collections.addAll(hc1, gp,parent1, parent2);
 
-		ArrayList <ArrayList> hc2 = new ArrayList <ArrayList>();
+		ArrayList <ArrayList<String>> hc2 = new ArrayList<ArrayList<String>>();
 		hc2.add(p1);
 
-		ArrayList <ArrayList> hc3 = new ArrayList <ArrayList>();
+		ArrayList <ArrayList<String>> hc3 = new ArrayList <ArrayList<String>>();
 		hc3.add(p2);
 
-		ArrayList <ArrayList> hc4 = new ArrayList <ArrayList>();
+		ArrayList <ArrayList<String>> hc4 = new ArrayList <ArrayList<String>>();
 		hc4.add(p3);
 
 		/* knowledge base(kb) is an array list of clauses (arrayList) */
-		ArrayList <ArrayList> kb = new ArrayList <ArrayList>();
-		Collections.addAll(kb,hc1,hc2,hc3,hc4);
+		ArrayList <ArrayList<ArrayList<String>>> kb = new ArrayList <ArrayList<ArrayList<String>>>();
+		Collections.addAll(kb, hc1,hc2,hc3,hc4);
 	}
 }
 
