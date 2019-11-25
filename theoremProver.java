@@ -2,7 +2,9 @@
 import java.util.*;
 import java.util.ArrayList;
 
-class TheoremProver {
+public class TheoremProver {
+	static final int MAXRESOLUTIONS = 300;
+	
 	public void bind (HashMap<String,String> bindings, String s1, String s2) {
 		while (bindings.containsKey(s1)){
 			s1 = bindings.get(s1);
@@ -41,18 +43,17 @@ class TheoremProver {
 		}
 	}
 
-	public void bindVar (HashMap <String,String> bindings, String s){
+	public static String bindVar (HashMap <String,String> bindings, String s){
 		while (bindings.containsKey(s)){
 			s = bindings.get(s);
 		}
+		return var;
 	}
 }
 	
 
 /* Horn Clause is a list of ArrayLists where first ArrayList is assumed non-negated
 and rest of the ArrayLists will be assumed negated */
-
-
 class Main {
 	public static void main (String args[]){
 		/* Predicates */
