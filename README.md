@@ -6,14 +6,14 @@ In this assignment you are asked to write a simplified version of a resolution t
 Resolution is a form of proof by refutation. A resolution theorem prover takes as input a number of axioms in clausal form along with a negated theorem, and attempts to derive the ∅ clause through the process of resolution. (Note that if the goal actually follows from the axioms then the negated goal causes an inconsistency which allows the ∅ clause to be derived.) Resolution operates by taking two clauses that each contain a unifiable literal – in positive form in one clause and in negative form in the other (these are called complementary literals). The resolvent is obtained by combining all of the other literals in the two clauses (after making the appropriate substitutions), dropping the complementary literals (which cancel each other). If you continue to do this and there is a contradiction, then the ∅ clause will be reached.
 For simplicity we will restrict our theorem prover so that the axioms are all Horn Clauses and the goal will be restricted to a conjunction of positive literals.
 A Horn clause has the logical form:
-P ⇐= (P1 􏰣P2 􏰣...􏰣Pn),
+P ⇐= (P1 ^ P2 ^...^Pn),
 where P1,P2...Pn are all positive literals (i.e., positive atomic formulas). This should be read, if P1,P2...Pn are all true, then P is true. Notice, that this formula has the equivalent clausal form:
-P 􏰤¬P1 􏰤¬P2 􏰤¬...􏰤¬Pn.
+P v ¬P1 v ¬P2 v¬...v¬Pn.
 Thus each horn clause (and thus each axiom to your theorem prover) will be the disjunction of one positive atomic formula and 0 to n negative atomic formulas. The way these should be represented will be discussed below.
 The one goal clause will have the logical form:
-Q1 􏰣Q2 􏰣...􏰣Qm,
+Q1 ^ Q2 􏰣...^ Qm,
 Where Q1, Q2, ...Qm are all positive literals. This formula, when negated, becomes the clause: 1
-¬Q1 􏰤¬Q2 􏰤...􏰤¬Qm.
+¬Q1 v ¬Q2 v...v¬Qm.
 The advantage of restricting the input axioms to Horn clauses is that if we resolve an axiom clause (which contains 1 positive literal) against a clause that has both the form of the goal (all negative literals) and contains a literal which unifies with the positive literal in the axiom clause, the result will have the same form as the goal clause. Also note that since only the first literal in an axiom clause is in positive form (everything else is negative) it is the only literal eligible to form a complementary literal with a non-axiom clause literal.
 2 Your Theorem-Prover
 For this Lisp implementation, each axiom will be a Horn Clause. A Horn clause will be coded as a list of predicates, where the first predicate will be assumed non-negated and the rest of the predicates will be assumed negated (so we do not need to explicitly represent negation in the system). The goal clause will be coded as a list of predicates all of which will be assumed negated.
