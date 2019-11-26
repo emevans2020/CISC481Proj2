@@ -6,7 +6,7 @@ public class TheoremProver {
 
 	public static HashMap<String, Integer> counter = new HashMap<>();
 
-	public void bind(HashMap<String, String> bindings, String s1, String s2) {
+	public static void bind(HashMap<String, String> bindings, String s1, String s2) {
 		while (bindings.containsKey(s1)) {
 			s1 = bindings.get(s1);
 		}
@@ -18,9 +18,10 @@ public class TheoremProver {
 		}
 	}
 
-	public HashMap<String, String> Unify(ArrayList<String> p1, ArrayList<String> p2, HashMap<String, String> bindings) {
-		
-		@SuppressWarnings ("unchecked")
+	public static HashMap<String, String> Unify(ArrayList<String> p1, ArrayList<String> p2,
+			HashMap<String, String> bindings) {
+
+		@SuppressWarnings("unchecked")
 		HashMap<String, String> result = (HashMap<String, String>) bindings.clone();
 
 		if (p1.equals(p2)) {
@@ -79,7 +80,115 @@ public class TheoremProver {
 		}
 		return result;
 	}
+
+	public static void printClauses(ArrayList<ArrayList<ArrayList<String>>> clauses){
+        for (ArrayList<ArrayList<String>> clause : clauses) {
+            System.out.println(clause);
+        }
+    }
+
+    public static HashSet<HashMap<String, String>> DFS(ArrayList<ArrayList<ArrayList<String>>> clauses,
+        ArrayList<ArrayList<String>> goal){
+        int counter = 0;
+        HashMap<String, String> bindings = new HashMap<>();
+
+        HashSet<HashMap<String, String>> result = new HashSet<>();
+
+        Stack<goalWithBindings> open_list = new Stack<>();
+        open_list.push(new goalWithBindings(goal, bindings));
+
+        while (!open_list.isEmpty() && bindings!=null) {
+
+            goalWithBindings cur_goalWithBindings = open_list.pop();
+
+            ArrayList<ArrayList<String>> currentGoal = cur_goalWithBindings.currentGoal;
+            HashMap<String, String> currentBinding = cur_goalWithBindings.currentBinding;
+
+            for(ArrayList<ArrayList<String>> cur_clause : clauses) {
+
+                cur_clause = uniquify(cur_clause);
+                counter++;
+                HashMap<String, String> new_bindings = Unify(currentGoal.get(0),
+                        cur_clause.get(0), currentBinding);
+
+                if (new_bindings == null) {
+                    continue;
+                }
+                if (new_bindings != null) {
+                    ArrayList<ArrayList<String>> successor = new ArrayList<>();
+
+                    successor.addAll(cur_clause);
+					successor.remove(0);
+
+					@SuppressWarnings("unchecked")
+                    ArrayList<ArrayList<String>> tmp_cur_goal = (ArrayList<ArrayList<String>>) currentGoal.clone();
+                    tmp_cur_goal.remove(0);
+                    successor.addAll(tmp_cur_goal);
+
+                    if (successor.isEmpty()) {
+                        result.add(new_bindings);
+                    }
+                    if (!successor.isEmpty() && counter<=MAXRESOLUTIONS) {
+                        open_list.push(new goalWithBindings(successor, new_bindings));
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    public static HashSet<HashMap<String, String>> BFS(ArrayList<ArrayList<ArrayList<String>>> clauses,
+                                                       ArrayList<ArrayList<String>> goal){
+        int counter = 0;
+        HashMap<String, String> bindings = new HashMap<>();
+
+        HashSet<HashMap<String, String>> result = new HashSet<>();
+
+        Queue<goalWithBindings> open_list = new LinkedList<>();
+        open_list.add(new goalWithBindings(goal, bindings));
+
+
+        while (!open_list.isEmpty() && bindings!=null) {
+
+            goalWithBindings cur_goalWithBindings = open_list.remove();
+
+            ArrayList<ArrayList<String>> currentGoal = cur_goalWithBindings.currentGoal;
+            HashMap<String, String> currentBinding = cur_goalWithBindings.currentBinding;
+
+            for(ArrayList<ArrayList<String>> cur_clause : clauses) {
+
+                cur_clause = uniquify(cur_clause);
+                counter++;
+                HashMap<String, String> new_bindings = Unify(currentGoal.get(0),
+                    cur_clause.get(0), currentBinding);
+
+                if (new_bindings == null) {
+                    continue;
+                }
+                if (new_bindings != null) {
+                    ArrayList<ArrayList<String>> successor = new ArrayList<>();
+
+                    successor.addAll(cur_clause);
+					successor.remove(0);
+					
+					@SuppressWarnings("unchecked")
+                    ArrayList<ArrayList<String>> tmp_cur_goal = (ArrayList<ArrayList<String>>) currentGoal.clone();
+                    tmp_cur_goal.remove(0);
+                    successor.addAll(tmp_cur_goal);
+
+                    if (successor.isEmpty()) {
+                        result.add(new_bindings);
+                    }
+                    if (!successor.isEmpty() && counter<=MAXRESOLUTIONS) {
+                        open_list.add(new goalWithBindings(successor, new_bindings));
+                    }
+                }
+            }
+        }
+        return result;
+    }
 }
+
 
 /*
  * Horn Clause is a list of ArrayLists where first ArrayList is assumed
