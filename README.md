@@ -95,3 +95,29 @@ In order to test your functions you should load the file test-prover.lisp availa
 The test data *premises-1* and *goals-1* should illustrate the difference between depth- first and breadth-first search; *premises-2* and *goals-2* comprise a typical Prolog theorem and should exercise your theorem-prover well; and *premises-3* and *goals-3* contains a left-recursion to illustrate that Prolog can go into an infinite loop.
 First, run your theorem-prover on the three test data using depth-first search. Then mod- ify the program to do breadth-first search, and run it a second time on *premises-1* and *goals-1*. Hand in a typescript of these runs, along with a listing of your program. You should also show test runs of your major helping functions (e.g., the ones suggested here) just in case the test cases we give do not show their full power.
 5
+
+
+ * open list changes every time you expand a node in general breadth first
+ * search layer by layer - first in first out queue
+ * 
+ * https://www.geeksforgeeks.org/queue-interface-java/
+ * 
+ * depth first - go all the way down uses stack for list!
+ * https://www.geeksforgeeks.org/stack-class-in-java/
+  
+ 
+ * pop or dequeue depending on which search start with the negated goal clause
+ * in the open list 1. take this off open list 2. check if can unify (use helper
+ * unify function) 3. you get the bindings out of unify (DONT MISMATCH BINDINGS)
+ * 4. open list = list of lists each list has clause and list of bindings
+ * clauses and bindings have to match so could two separates but the elements
+ * need to match up! 5. if it does unify to empty clause--> success!! 6. no
+ * unify = failure! I can assume
+ * they"re all just going to be left negative I don"t need to go putting in
+ * negatives in front of my clauses
+ 
+
+
+ Horn Clause is a list of ArrayLists where first ArrayList is assumed
+ non-negated and rest of the ArrayLists will be assumed negated
+ 
