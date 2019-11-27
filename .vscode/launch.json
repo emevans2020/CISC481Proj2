@@ -2,6 +2,27 @@
 	"configurations": [
 		{
 			"type": "java",
+			"name": "CodeLens (Launch) - functionTests",
+			"request": "launch",
+			"mainClass": "functionTests",
+			"projectName": "TheoremProver_2f90ce49"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - Test4",
+			"request": "launch",
+			"mainClass": "Test4",
+			"projectName": "TheoremProver_2f90ce49"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - Test3",
+			"request": "launch",
+			"mainClass": "Test3",
+			"projectName": "TheoremProver_2f90ce49"
+		},
+		{
+			"type": "java",
 			"name": "CodeLens (Launch) - Test2",
 			"request": "launch",
 			"mainClass": "Test2",
