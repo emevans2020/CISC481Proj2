@@ -1,0 +1,159 @@
+Script started on Wed Nov 27 14:38:08 2019
+[?1034hbash-3.2$ javac Test1Premises1.java 
+bash-3.2$ java Ts[Kest1Premises1.java [K[K[K[K[K[K
+Error: Could not find or load main class Test1Premises1
+Caused by: java.lang.ClassNotFoundException: Test1Premises1
+bash-3.2$ exit[K[K[K[Kj[Kjava tes[K[K[KMain.class [K[K[K[K[K[K[K
+Knowledge Base: 
+[[aunt, ?x, ?y], [sister, ?x, ?z], [mother, ?z, ?y]]
+[[aunt, ?x, ?y], [sister, ?x, ?z], [father, ?z, ?y]]
+[[sister, Mary, Sue]]
+[[sister, Mary, Doug]]
+[[father, Doug, John]]
+[[mother, Sue, Paul]]
+-------------------------------------------
+Goals:
+[[aunt, ?x, ?y]]
+-------------------------------------------
+Result: 
+{?x/Mary, ?y/John, }
+{?x/Mary, ?y/Paul, }
+{?x/Mary, ?y/Paul, }
+{?x/Mary, ?y/John, }
+bash-3.2$ This is for test [K 2
+bash: This: command not found
+bash-3.2$ javac Test3[K2Premises2.java 
+bash-3.2$ java Test2
+Knowledge Base: 
+[[simple_sentence, ?x, ?y, ?z, ?u, ?v], [noun_phrase, ?x, ?y], [verb_phrase, ?z, ?u, ?v]]
+[[noun_phrase, ?x, ?y], [article, ?x], [noun, ?y]]
+[[verb_phrase, ?x, ?y, ?z], [verb, ?x], [noun_phrase, ?y, ?z]]
+[[article, a]]
+[[article, the]]
+[[noun, man]]
+[[noun, dog]]
+[[verb, likes]]
+[[verb, bites]]
+-------------------------------------------
+Goals:
+[[simple_sentence, ?x, ?y, ?z, ?u, ?v]]
+-------------------------------------------
+Result: 
+{?x/the, ?y/dog, ?z/likes, ?u/the, ?v/man, }
+{?x/the, ?y/dog, ?z/likes, ?u/the, ?v/dog, }
+{?x/a, ?y/dog, ?z/bites, ?u/the, ?v/man, }
+{?x/the, ?y/man, ?z/bites, ?u/the, ?v/dog, }
+{?x/a, ?y/dog, ?z/likes, ?u/a, ?v/man, }
+{?x/the, ?y/dog, ?z/bites, ?u/the, ?v/man, }
+{?x/a, ?y/dog, ?z/bites, ?u/the, ?v/dog, }
+{?x/a, ?y/dog, ?z/likes, ?u/a, ?v/dog, }
+{?x/the, ?y/man, ?z/bites, ?u/a, ?v/man, }
+{?x/the, ?y/man, ?z/likes, ?u/the, ?v/man, }
+{?x/the, ?y/dog, ?z/bites, ?u/the, ?v/dog, }
+{?x/the, ?y/man, ?z/likes, ?u/the, ?v/dog, }
+{?x/the, ?y/dog, ?z/likes, ?u/a, ?v/dog, }
+{?x/the, ?y/dog, ?z/likes, ?u/a, ?v/man, }
+{?x/a, ?y/dog, ?z/bites, ?u/a, ?v/man, }
+{?x/the, ?y/man, ?z/bites, ?u/a, ?v/dog, }
+{?x/a, ?y/dog, ?z/likes, ?u/the, ?v/man, }
+{?x/the, ?y/man, ?z/bites, ?u/the, ?v/man, }
+{?x/a, ?y/dog, ?z/likes, ?u/the, ?v/dog, }
+{?x/the, ?y/dog, ?z/bites, ?u/a, ?v/man, }
+{?x/a, ?y/dog, ?z/bites, ?u/a, ?v/dog, }
+{?x/the, ?y/dog, ?z/bites, ?u/a, ?v/dog, }
+{?x/the, ?y/man, ?z/likes, ?u/a, ?v/man, }
+{?x/the, ?y/man, ?z/likes, ?u/a, ?v/dog, }
+bash-3.2$ This is for [K[K[K[K[K[K[K[K[K[K[K[K---------------------------------------------
+bash: ---------------------------------------------: command not found
+bash-3.2$ This is Test 3
+bash: This: command not found
+bash-3.2$ javac Test3Premises3.java 
+bash-3.2$ java Test3
+Knowledge Base: 
+[[ancestor, ?x, ?y], [parent, ?x, ?y]]
+[[ancestor, ?x, ?y], [ancestor, ?x, ?z], [parent, ?z, ?y]]
+[[parent, Mary, Paul]]
+[[parent, Sue, Mary]]
+-------------------------------------------
+Goals:
+[[ancestor, ?x, ?y]]
+-------------------------------------------
+Result: 
+{?x/Mary, ?y/Paul, }
+{?x/Sue, ?y/Mary, }
+bash-3.2$ java Test3c Test3Premises3.java 
+[C[C[C[C[C[C[C[C[C[C[8PThis is for Test 3
+[C[C[C[C[C[C[C[C[C[C---------------------------------------------
+bash: ---------------------------------------------: command not found
+bash-3.2$ ---------------------------------------------
+[C[C[C[C[C[C[C[C[C[Cjava Test3[Kc Test3Premises3.java 
+[C[C[C[C[C[C[C[C[C[C[8PThis is for Test 3[K4
+bash: This: command not found
+bash-3.2$ This is for Test 4
+---------------------------------------------
+[C[C[C[C[C[C[C[C[C[Cjava Test3[Kc Test3Premises3.java [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kt2[K4Premises4.java 
+bash-3.2$ java Test3[K4
+Knowledge Base: 
+[[ancestor, ?x, ?y], [ancestor, ?x, ?z], [parent, ?z, ?y]]
+[[ancestor, ?x, ?y], [parent, ?x, ?y]]
+[[parent, Mary, Paul]]
+[[parent, Sue, Mary]]
+-------------------------------------------
+Goals:
+[[ancestor, ?x, ?y]]
+-------------------------------------------
+Result: 
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Paul, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Paul, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Paul, }
+{?x/Mary, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Mary, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Paul, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Paul, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Paul, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+bash-3.2$ exit
+exit
+
+Script done on Wed Nov 27 14:42:25 2019

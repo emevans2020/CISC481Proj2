@@ -1,0 +1,208 @@
+Script started on Wed Nov 27 14:47:26 2019
+[?1034hbash-3.2$ T[KThis is test [K[K[K[K[KTest 1
+bash: This: command not found
+bash-3.2$ ------------------------------------------------
+bash: ------------------------------------------------: command not found
+bash-3.2$ 
+bash-3.2$ java Main.class 
+Knowledge Base: 
+[[aunt, ?x, ?y], [sister, ?x, ?z], [mother, ?z, ?y]]
+[[aunt, ?x, ?y], [sister, ?x, ?z], [father, ?z, ?y]]
+[[sister, Mary, Sue]]
+[[sister, Mary, Doug]]
+[[father, Doug, John]]
+[[mother, Sue, Paul]]
+-------------------------------------------
+Goals:
+[[aunt, ?x, ?y]]
+-------------------------------------------
+Result: 
+{?x/Mary, ?y/Paul, }
+{?x/Mary, ?y/John, }
+{?x/Mary, ?y/Paul, }
+{?x/Mary, ?y/John, }
+bash-3.2$ java Main------------------------------------------------
+bash: ------------------------------------------------: command not found
+bash-3.2$ This is test 2
+bash: This: command not found
+bash-3.2$ 
+bash-3.2$ java Test2
+Knowledge Base: 
+[[simple_sentence, ?x, ?y, ?z, ?u, ?v], [noun_phrase, ?x, ?y], [verb_phrase, ?z, ?u, ?v]]
+[[noun_phrase, ?x, ?y], [article, ?x], [noun, ?y]]
+[[verb_phrase, ?x, ?y, ?z], [verb, ?x], [noun_phrase, ?y, ?z]]
+[[article, a]]
+[[article, the]]
+[[noun, man]]
+[[noun, dog]]
+[[verb, likes]]
+[[verb, bites]]
+-------------------------------------------
+Goals:
+[[simple_sentence, ?x, ?y, ?z, ?u, ?v]]
+-------------------------------------------
+Result: 
+{?x/a, ?y/dog, ?z/likes, ?u/the, ?v/man, }
+{?x/a, ?y/man, ?z/likes, ?u/a, ?v/man, }
+{?x/the, ?y/dog, ?z/likes, ?u/a, ?v/dog, }
+{?x/a, ?y/dog, ?z/bites, ?u/the, ?v/man, }
+{?x/a, ?y/man, ?z/bites, ?u/the, ?v/dog, }
+{?x/the, ?y/man, ?z/likes, ?u/the, ?v/man, }
+{?x/a, ?y/man, ?z/bites, ?u/the, ?v/man, }
+{?x/a, ?y/man, ?z/likes, ?u/the, ?v/man, }
+{?x/a, ?y/dog, ?z/bites, ?u/a, ?v/man, }
+{?x/a, ?y/man, ?z/bites, ?u/a, ?v/dog, }
+{?x/a, ?y/dog, ?z/likes, ?u/a, ?v/dog, }
+{?x/the, ?y/dog, ?z/bites, ?u/the, ?v/man, }
+{?x/the, ?y/man, ?z/likes, ?u/a, ?v/dog, }
+{?x/the, ?y/man, ?z/bites, ?u/the, ?v/dog, }
+{?x/a, ?y/man, ?z/bites, ?u/a, ?v/man, }
+{?x/the, ?y/dog, ?z/likes, ?u/a, ?v/man, }
+{?x/the, ?y/man, ?z/bites, ?u/the, ?v/man, }
+{?x/the, ?y/dog, ?z/bites, ?u/the, ?v/dog, }
+{?x/a, ?y/man, ?z/likes, ?u/a, ?v/dog, }
+{?x/a, ?y/dog, ?z/likes, ?u/the, ?v/dog, }
+{?x/the, ?y/dog, ?z/bites, ?u/a, ?v/man, }
+{?x/the, ?y/man, ?z/likes, ?u/the, ?v/dog, }
+{?x/the, ?y/dog, ?z/likes, ?u/the, ?v/dog, }
+{?x/a, ?y/dog, ?z/bites, ?u/the, ?v/dog, }
+{?x/the, ?y/man, ?z/bites, ?u/a, ?v/dog, }
+{?x/the, ?y/dog, ?z/likes, ?u/the, ?v/man, }
+{?x/a, ?y/dog, ?z/likes, ?u/a, ?v/man, }
+{?x/a, ?y/man, ?z/likes, ?u/the, ?v/dog, }
+{?x/the, ?y/man, ?z/bites, ?u/a, ?v/man, }
+{?x/the, ?y/dog, ?z/bites, ?u/a, ?v/dog, }
+{?x/the, ?y/man, ?z/likes, ?u/a, ?v/man, }
+{?x/a, ?y/dog, ?z/bites, ?u/a, ?v/dog, }
+bash-3.2$ java Test2This is Test 2
+------------------------------------------------
+bash: ------------------------------------------------: command not found
+bash-3.2$ This is test 3
+bash: This: command not found
+bash-3.2$ 
+bash-3.2$ java Test3
+Knowledge Base: 
+[[ancestor, ?x, ?y], [parent, ?x, ?y]]
+[[ancestor, ?x, ?y], [ancestor, ?x, ?z], [parent, ?z, ?y]]
+[[parent, Mary, Paul]]
+[[parent, Sue, Mary]]
+-------------------------------------------
+Goals:
+[[ancestor, ?x, ?y]]
+-------------------------------------------
+Result: 
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Mary, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Paul, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Mary, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Paul, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Paul, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Paul, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Mary, ?y/Paul, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+bash-3.2$ java Test3This is test 3
+------------------------------------------------
+bash: ------------------------------------------------: command not found
+bash-3.2$ ------------------------------------------------
+[C[C[C[C[C[C[C[C[C[Cjava Test3[K------------------------------------------------
+[C[C[C[C[C[C[C[C[C[C[KThis is test 4
+bash: This: command not found
+bash-3.2$ 
+bash-3.2$ java Test3[K4
+Test4.class          Test4Premises4.java  
+bash-3.2$ java Test4
+Knowledge Base: 
+[[ancestor, ?x, ?y], [ancestor, ?x, ?z], [parent, ?z, ?y]]
+[[ancestor, ?x, ?y], [parent, ?x, ?y]]
+[[parent, Mary, Paul]]
+[[parent, Sue, Mary]]
+-------------------------------------------
+Goals:
+[[ancestor, ?x, ?y]]
+-------------------------------------------
+Result: 
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Paul, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Mary, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Paul, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Paul, }
+{?x/Mary, ?y/Paul, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Paul, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Sue, }
+{?x/Sue, ?y/Mary, }
+{?x/Sue, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+{?x/Mary, ?y/Sue, }
+{?x/Mary, ?y/Sue, }
+{?x/Mary, ?y/Mary, }
+bash-3.2$ exit
+exit
+
+Script done on Wed Nov 27 14:49:27 2019

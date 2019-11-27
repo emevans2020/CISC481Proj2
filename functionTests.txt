@@ -1,0 +1,16 @@
+This script shows how the helper functions all work
+Script started on Wed Nov 27 14:36:34 2019
+[?1034hbash-3.2$ java functionTests.java 
+Error: Could not find or load main class functionTests.java
+Caused by: java.lang.ClassNotFoundException: functionTests.java
+bash-3.2$ f[Kjava functionTests.
+Error: Could not find or load main class functionTests.
+Caused by: java.lang.ClassNotFoundException: functionTests.
+bash-3.2$ java functionTests.[K
+?q
+{?w=y, ?x=?z}
+[[p, ?x4, ?y7], [a, ?x4, ?z3], [a, ?z3, ?y7]]
+bash-3.2$ exit
+exit
+
+Script done on Wed Nov 27 14:36:57 2019

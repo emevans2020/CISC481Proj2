@@ -96,8 +96,8 @@ class Test2 extends TheoremProver{
 		System.out.println("Goals:\n" + goals);
 
         /* Comment & uncomment this section to do either BFS or DFS */
-        bindings = DFS(knowledgeBase, goals);
-        // bindings = BFS(knowledgeBase, goals);
+        // bindings = DFS(knowledgeBase, goals);
+        bindings = BFS(knowledgeBase, goals);
      
         System.out.println("-------------------------------------------\nResult: ");
         for (HashMap<String, String> binding : bindings) {
