@@ -2,6 +2,13 @@
 	"configurations": [
 		{
 			"type": "java",
+			"name": "CodeLens (Launch) - Test2",
+			"request": "launch",
+			"mainClass": "Test2",
+			"projectName": "TheoremProver_2f90ce49"
+		},
+		{
+			"type": "java",
 			"name": "CodeLens (Launch) - Main",
 			"request": "launch",
 			"mainClass": "Main",
